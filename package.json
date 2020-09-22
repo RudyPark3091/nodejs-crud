@@ -1,0 +1,18 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "simple crud sith nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/RudyPark3091/nodejs-crud"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
