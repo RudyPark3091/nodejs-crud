@@ -7,14 +7,14 @@ const PORT_NUM = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.set('views', __dirname + '/view');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
 app.get("/", (req, res) => {
-    fs.readFile("./public/index.html", (err, html) => {
-        if (err) console.log(err);
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end(html);
-    });
+  res.render('index', { title: 'main' });
 });
 
 app.listen(PORT_NUM, () => {
-    console.log("server ready");
+  console.log("server ready");
 });
