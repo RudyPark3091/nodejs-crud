@@ -14,6 +14,8 @@ connection.query(`CREATE DATABASE IF NOT EXISTS ${db.database}`, (err, results) 
   console.log(results);
 });
 
+connection.end();
+
 const sequelize = new Sequelize(
   `${db.database}`,
   db.username,
