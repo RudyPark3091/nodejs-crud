@@ -1,5 +1,12 @@
 const db = {
-  "db": "nodejs-crud",
+  "database": "crud",
   "username": "root",
-  "password": "root"
+  "password": "root",
+  "config": {
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306
+  }
 }
+
+module.exports = { db };

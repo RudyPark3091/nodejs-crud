@@ -22,6 +22,6 @@ Posts.create({
   content: "world"
 });
 
-sequelize.sync({force: true});
+sequelize.sync();
 
 module.exports = { Posts };
