@@ -11,9 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.set('views', __dirname + '/view');
 app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
+app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', indexRouter);
 
