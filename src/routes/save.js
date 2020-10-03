@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
     title: 'save'
   });
 
-  sequelize.sync({force: true});
+  // sequelize.sync({force: true});
 });
 
 router.post('/', (req, res, next) => {

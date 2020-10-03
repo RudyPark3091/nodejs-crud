@@ -7,24 +7,14 @@
             <th id="table-created">created</th>
         </thead>
         <tbody>
-            <tr>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-            </tr>
-            <tr>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-            </tr>
-            <tr>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-                <td>ok</td>
-            </tr>
+            <% for (let i = 0; i < items.titles.length; i++) { %>
+                <tr>
+                    <td><%= i %></td>
+                    <td>admin</td>
+                    <td><%= items.titles[i] %></td>
+                    <td><%= items.createdAt[i] %></td>
+                </tr>
+            <% } %>
         </tbody>
     </table>
 </div>
