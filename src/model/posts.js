@@ -7,6 +7,10 @@ const Posts = sequelize.define('Posts', {
     primaryKey: true,
     autoIncrement: true
   },
+  author: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   title: {
     type: Sequelize.STRING,
     allowNull: false
@@ -15,6 +19,7 @@ const Posts = sequelize.define('Posts', {
     type: Sequelize.TEXT,
     allowNull: false
   }
-})
+});
 
+sequelize.sync();
 module.exports = Posts;

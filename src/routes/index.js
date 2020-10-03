@@ -6,16 +6,19 @@ const Posts = require("../model/posts.js");
 router.get('/', (req, res, next) => {
   const posts = Posts.findAll().then(posts => {
     const titles = [];
+    const authors = [];
     const contents = [];
     const dates = [];
 
     posts.forEach(post => {
       titles.push(post.dataValues.title);
+      authors.push(post.dataValues.author);
       contents.push(post.dataValues.content);
       dates.push(post.dataValues.createdAt);
     });
     const next = {
       "titles": titles,
+      "authors": authors,
       "contents": contents,
       "createdAt": dates
     };

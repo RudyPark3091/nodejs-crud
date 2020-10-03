@@ -10,7 +10,7 @@
             <% for (let i = 0; i < items.titles.length; i++) { %>
                 <tr>
                     <td><%= i+1 %></td>
-                    <td>admin</td>
+                    <td><%= items.authors[i] %></td>
                     <td><%= items.titles[i] %></td>
                     <td><%= new Date(items.createdAt[i]).toLocaleString() %></td>
                 </tr>

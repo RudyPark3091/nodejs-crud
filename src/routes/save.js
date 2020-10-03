@@ -14,9 +14,10 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   Posts.create({
     title: req.body.title,
+    author: req.body.author,
     content: req.body.content
-  }).then((res) => {
-      console.log(res);
+  }).then(() => {
+      console.log(res.statusCode);
     }
   ).catch(err => {
     console.error(err);
