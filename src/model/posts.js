@@ -22,4 +22,5 @@ const Posts = sequelize.define('Posts', {
 });
 
 sequelize.sync();
+
 module.exports = Posts;

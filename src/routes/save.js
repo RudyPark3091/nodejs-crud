@@ -17,7 +17,7 @@ router.post('/', (req, res, next) => {
     author: req.body.author,
     content: req.body.content
   }).then(() => {
-      console.log(res.statusCode);
+      res.send('ok');
     }
   ).catch(err => {
     console.error(err);

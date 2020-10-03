@@ -14,17 +14,15 @@
 
     const xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        alert(xhr.responseText);
-        window.location.href = '/';
-      }
-    }
-
     xhr.open('POST', '/save', true);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.send(JSON.stringify(reqBody));
-    window.location.href = '/';
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        window.location.href = '/';
+      }
+    }
   }
 
   cancelButton.onclick = (e) => {
