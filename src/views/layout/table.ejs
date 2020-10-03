@@ -9,10 +9,10 @@
         <tbody>
             <% for (let i = 0; i < items.titles.length; i++) { %>
                 <tr>
-                    <td><%= i %></td>
+                    <td><%= i+1 %></td>
                     <td>admin</td>
                     <td><%= items.titles[i] %></td>
-                    <td><%= items.createdAt[i] %></td>
+                    <td><%= new Date(items.createdAt[i]).toLocaleString() %></td>
                 </tr>
             <% } %>
         </tbody>
