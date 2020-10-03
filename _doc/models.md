@@ -19,8 +19,17 @@ Posts 모델은 `~/src/model/model`에 작성된 정보를 토대로 데이터�
 이때 요청을 보내는 방법은 form의 action, ajax 등 여러 방법이 있지만 `XMLHttpRequest`객체를 사용해 POST 요청을 보내도록 했다.   
 POST 요청이 들어오면 `~/save/routes/saves`에 정의된 라우터는 `create`메소드를 호출해 데이터베이스에 레코드를 생성한다.   
 이때 테스트 과정에서 레코드가 쌓이는 것을 방지하기 위해 `sync`메소드에 `force: true`옵션을 활성화해 `/save`페이지에 접근할때마다 이전 레코드를 모두 삭제하도록 하였다.   
+   
+## 레코드 읽어들이기
+`레코드 생성하기`에서 다뤘듯, sequelize 모듈에서 접속한 데이터베이스 상에 존재하는 레코드를 '모델 단위'로 읽어올 수 있다.   
+이를 가능케 하는 것이 `findAll`메소드이다.   
+findAll메소드는 SQL에서의 `SELECT`문에 해당하며, `WHERE`문과 같이 조건을 걸 수 있다.   
+이는 [findAll매뉴얼]에서 상세하게 확인할 수 있다.   
+이 역시 Promise 기반으로 작성되어 chaining 기법을 사용해 코드를 깔끔하게 작성할 수 있다.   
+findAll메소드로 가져온 레코드들을 적절히 가공하여 ejs 템플릿 엔진으로 전달해 index.ejs 페이지에서 확인할 수 있게 하였다.   
 
 
 
 
 [매뉴얼]: https://sequelize.org/master/manual/model-basics.html#model-definition
+[findAll매뉴얼]: https://sequelize.org/master/manual/model-querying-basics.html
