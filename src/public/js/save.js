@@ -1,5 +1,6 @@
 (function () {
 const saveButton = document.getElementById('save');
+const cancelButton = document.getElementById('cancel');
 const inputTitle = document.getElementById('input-title');
 const inputContent = document.getElementById('input-content');
 
@@ -21,5 +22,10 @@ saveButton.onclick = (e) => {
   };
 
   xhr.send(JSON.stringify(reqBody));
+  location.href = '/';
+}
+
+cancelButton.onclick = (e) => {
+  location.href = '/';
 }
 })();

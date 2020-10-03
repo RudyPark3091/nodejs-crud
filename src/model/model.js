@@ -11,7 +11,6 @@ const connection = mysql.createConnection({
 
 connection.query(`CREATE DATABASE IF NOT EXISTS ${db.database}`, (err, results) => {
   if (err) console.error(err);
-  console.log(results);
 });
 
 connection.end();

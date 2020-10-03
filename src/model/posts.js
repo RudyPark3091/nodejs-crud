@@ -17,11 +17,4 @@ const Posts = sequelize.define('Posts', {
   }
 })
 
-Posts.create({
-  title: "hello",
-  content: "world"
-});
-
-sequelize.sync();
-
-module.exports = { Posts };
+module.exports = Posts;
