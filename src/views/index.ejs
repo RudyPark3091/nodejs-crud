@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>main</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        <div id="header">
-            <%= title %>
-        </div>
-        <div id="container">
-            <div id="page-title">
-            </div>
-            <%- include ('table.ejs') %>
-        </div>
-    </body>
-</html>
+<%- include('layout/header.ejs') %>
+<div id="container">
+    <div id="page-title">
+    </div>
+    <%- include ('layout/table.ejs') %>
+    <button id="post">post</button>
+</div>
+<script>
+    const post = document.querySelector('#post');
+    post.onclick = (e) => {
+        location.href = '/save';
+    }
+</script>
+<%- include('layout/footer.ejs') %>
