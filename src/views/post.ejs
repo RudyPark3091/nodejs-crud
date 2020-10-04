@@ -1,0 +1,12 @@
+<%- include('layout/header.ejs') %>
+<div>
+  <form>
+    <input id="input-title" type="text" placeholder="title" value="<%= data.title %>">
+    <input id="input-author" type="text" placeholder="author" value="<%= data.author %>">
+    <textarea id="input-content" cols="30" rows="10"><%= data.content %></textarea>
+  </form>
+  <button id="update">update</button>
+  <button id="cancel">cancel</button>
+</div>
+<script src="js/update.js"></script>
+<%- include('layout/footer.ejs') %>

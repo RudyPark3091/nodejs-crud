@@ -7,6 +7,7 @@ const PORT_NUM = 3000;
 
 const indexRouter = require("./routes/index");
 const saveRouter = require("./routes/save");
+const postRouter = require("./routes/post");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -17,6 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', indexRouter);
 app.use('/save', saveRouter);
+app.use('/post', postRouter);
 
 app.listen(PORT_NUM, () => {
   console.log("server ready");
