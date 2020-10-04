@@ -7,6 +7,7 @@ router.get("/:id", (req, res, next) => {
   const id = req.params.id;
 
   Posts.findByPk(parseInt(id)).then(data => {
+    const id = data.dataValues.id;
     const title = data.dataValues.title;
     const author = data.dataValues.author;
     const content = data.dataValues.content;
@@ -14,6 +15,7 @@ router.get("/:id", (req, res, next) => {
     res.render("post", {
       "title": "post",
       "data": {
+        "id": id,
         "title": title,
         "author": author,
         "content": content

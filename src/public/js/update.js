@@ -9,7 +9,8 @@
     const reqBody = {
       "title": inputTitle.value,
       "author": inputAuthor.value,
-      "content": inputContent.value
+      "content": inputContent.value,
+      "id": inputTitle.dataset.id
     };
 
     const xhr = new XMLHttpRequest();
