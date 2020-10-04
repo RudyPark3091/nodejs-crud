@@ -1,11 +1,9 @@
 (function () {
-  const titles = document.querySelectorAll(".post-title");
+  const titles = document.querySelectorAll(".post-row");
 
   titles.forEach(title => {
     title.onclick = (e) => {
-      const target = e.target;
-      const parent = target.parentNode;
-      const id = parent.querySelector(".post-id");
+      const id = title.querySelector(".post-id");
 
       window.location.href = `/post/${id.innerText}`;
     }

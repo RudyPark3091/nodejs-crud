@@ -26,4 +26,16 @@ router.get("/:id", (req, res, next) => {
   });
 })
 
+router.delete("/:id", (req, res, next) => {
+  const id = req.params.id;
+
+  Posts.findByPk(parseInt(id)).then(data => {
+    data.destroy();
+  }).then(() => {
+    res.send('ok');
+  }).catch(err => {
+    console.error(err);
+  });
+})
+
 module.exports = router;
