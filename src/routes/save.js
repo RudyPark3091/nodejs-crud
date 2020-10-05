@@ -27,7 +27,6 @@ router.post('/', (req, res, next) => {
 router.put('/', (req, res, next) => {
   Posts.update({
     title: req.body.title,
-    author: req.body.author,
     content: req.body.content
   }, {
     where: {
