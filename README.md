@@ -23,8 +23,7 @@
 - 테스트 코드는 작성하지 않음(TDD 방법론은 다음기회에)   
     
 ## 배포
-- 배포까지 하면 좋겠지만 서버비용 및 보안 등등을 고려하지 않고 작성한 간단한 프로젝트임   
-- 간단한 데모를 [CodeSandbox]를 사용하여 showcase 함 (MySQL DB를 사용하지 못하므로 파일 I/O로 대체)   
+- 배포까지 하면 좋겠지만 서버비용 및 보안 등등을 고려하지 않고 작성한 간단한 프로젝트임 ->     
 
 
 [MVC 디자인 패턴]: https://github.com/RudyPark3091/nodejs-crud/blob/master/_doc/mvc-pattern.md
