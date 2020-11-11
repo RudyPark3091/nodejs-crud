@@ -6,7 +6,8 @@ const connection = mysql.createConnection({
   host: db.config.host,
   user: db.username,
   password: db.password,
-  database: db.database
+  database: db.database,
+  port: db.config.port
 });
 
 connection.query(`CREATE DATABASE IF NOT EXISTS ${db.database}`, (err, results) => {
@@ -21,7 +22,8 @@ const sequelize = new Sequelize(
   db.password,
   {
     'host': db.config.host,
-    'dialect': db.config.dialect
+    'dialect': db.config.dialect,
+    'port': db.config.port
   }
 );
 

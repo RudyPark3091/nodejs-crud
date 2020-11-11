@@ -1,0 +1,28 @@
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  font-family: "Segoe UI", consolas, monospace, san-serif;
+}
+
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-weight: 400;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}

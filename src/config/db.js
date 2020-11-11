@@ -1,11 +1,11 @@
 const db = {
   "database": "crud",
   "username": "root",
-  "password": "root",
+  "password": "A!1asdfasdf",
   "config": {
     "host": "localhost",
     "dialect": "mysql",
-    "port": 3306
+    "port": 3307
   }
 }
 
