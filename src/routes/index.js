@@ -2,6 +2,23 @@ const express = require('express');
 const router = express.Router();
 const { sequelize } = require("../model/model.js");
 const Posts = require("../model/posts.js");
+const cookieParser = require("cookie-parser");
+
+/*
+router.use('/', function(req, res, next) {
+  res.writeHead(200, {
+    'Set-Cookie': ['firstCookie=cookie!', 'secondCookie=ck']
+  });
+  next();
+});
+*/
+
+router.use('/', (req, res, next) => {
+  res.cookie('firstCookie', 'cookie!', {
+    maxAge: 3000
+  });
+  next();
+});
 
 router.get('/', (req, res, next) => {
   const posts = Posts.findAll().then(posts => {
