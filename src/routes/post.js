@@ -13,7 +13,7 @@ router.get("/:id", (req, res, next) => {
     const content = data.dataValues.content;
 
     res.render("post", {
-      "title": "post",
+      "title": "POST",
       "data": {
         "id": id,
         "title": title,

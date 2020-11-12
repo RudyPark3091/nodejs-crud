@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
     return next;
   }).then(items => {
     res.render('index', {
-      'title': 'BOARD SERVICE',
+      'title': 'BOARD',
       'items': items
     });
   }).catch(err => {

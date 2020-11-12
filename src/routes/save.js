@@ -5,7 +5,7 @@ const Posts = require("../model/posts.js");
 
 router.get('/', (req, res, next) => {
   res.render('save', {
-    title: 'save'
+    title: 'SAVE'
   });
 
   // sequelize.sync({force: true});
