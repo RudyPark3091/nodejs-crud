@@ -18,7 +18,8 @@
 - cookie를 이용한 사용자 인증 구현  
 - express middleware function 작성을 통해 로직 분리  
 - user TABLE에 저장될 항목들(우선 보안은 배제):  
-    - id  
+    - id (기본키로 사용할 숫자)  
+    - email (일반적인 로그인의 id 역할)  
     - password  
     - alias (게시글의 author 항목을 대체)  
    
