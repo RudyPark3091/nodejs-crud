@@ -1,0 +1,14 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-email,
+#input-password {
+  width: 30vw;
+}
+
+#button-wrapper > button {
+  height: 120px;
+}
