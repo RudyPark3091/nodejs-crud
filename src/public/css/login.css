@@ -12,3 +12,8 @@
 #button-wrapper > button {
   height: 120px;
 }
+
+#instruction {
+  position: absolute;
+  opacity: .3;
+}
