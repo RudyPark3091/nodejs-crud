@@ -1,9 +1,10 @@
 <%- include('layout/header.ejs') %>
 <link rel="stylesheet" href="/css/login.css">
 <div id="container">
-  <form>
+  <form action="/login" method="post" autocomplete="off">
     <input id="input-email" type="text" placeholder="email">
     <input id="input-password" type="password" placeholder="password">
+    <input type="submit" style="display: none;">
   </form>
   <div id="button-wrapper">
     <button id="login">LOGIN</button>
@@ -14,4 +15,5 @@
     <div>password: asdfasdf</div>
   </div>
 </div>
+<script src="js/login.js"></script>
 <%- include('layout/footer.ejs') %>
