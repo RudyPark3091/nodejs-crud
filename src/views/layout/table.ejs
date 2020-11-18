@@ -10,9 +10,9 @@
             <% for (let i = 0; i < items.titles.length; i++) { %>
                 <tr class="post-row">
                     <td class="post-id"><%= items.ids[i] %></td>
-                    <td><%= items.authors[i] %></td>
+                    <td class="post-author"><%= items.authors[i] %></td>
                     <td class="post-title"><%= items.titles[i] %></td>
-                    <td><%= new Date(items.createdAt[i]).toLocaleString() %></td>
+                    <td class="post-created"><%= new Date(items.createdAt[i]).toLocaleString() %></td>
                 </tr>
             <% } %>
         </tbody>

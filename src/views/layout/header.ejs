@@ -9,4 +9,9 @@
     <body>
         <div id="header">
             <%= title %>
+            <% if (loginAs) { %>
+              <div id="login-greeting">Logged in as <%= loginAs %></div>
+            <% } else { %>
+              <div id="login-greeting">Not Logged In</div>
+            <% } %>
         </div>

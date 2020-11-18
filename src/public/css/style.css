@@ -12,6 +12,13 @@ body {
   font-weight: 300;
 }
 
+#login-greeting {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1rem;
+}
+
 table {
   width: 100%;
   text-align: center;
@@ -32,6 +39,22 @@ tbody td {
   cursor: pointer;
 }
 
+td.post-title {
+  width: 30%;
+}
+
+td.post-created {
+  width: 20%;
+}
+
+td.post-author {
+  width: 10%;
+}
+
+td.post-id {
+  width: 10%;
+}
+
 button:focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
@@ -46,4 +69,24 @@ button {
   width: 100px;
   height: 50px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  thead th#table-postid,
+  thead th#table-created {
+    display: none;
+  }
+
+  td.post-id,
+  td.post-created {
+    display: none;
+  }
+
+  td.post-author {
+    width: 25%;
+  }
+
+  td.post-title {
+    width: 75%;
+  }
 }

@@ -3,6 +3,15 @@ const router = express.Router();
 const { sequelize } = require("../model/model.js");
 const Posts = require("../model/posts.js");
 
+router.use((req, res, next) => {
+  if (req.cookies.userAlias) {
+    req.loginAs = req.cookies.userAlias;
+    next();
+  } else {
+    res.status(403).send("unauthenticated");
+  }
+});
+
 router.get("/:id", (req, res, next) => {
   const id = req.params.id;
 
@@ -19,7 +28,8 @@ router.get("/:id", (req, res, next) => {
         "title": title,
         "author": author,
         "content": content
-      }
+      },
+      "loginAs": req.loginAs
     });
   }).catch(err => {
     console.error(err);

@@ -3,9 +3,19 @@ const router = express.Router();
 const { sequelize } = require("../model/model.js");
 const Posts = require("../model/posts.js");
 
+router.use((req, res, next) => {
+  if (req.cookies.userAlias) {
+    req.loginAs = req.cookies.userAlias;
+    next();
+  } else {
+    res.status(403).send("unauthenticated");
+  }
+});
+
 router.get('/', (req, res, next) => {
   res.render('save', {
-    title: 'SAVE'
+    title: 'SAVE',
+    loginAs: req.loginAs
   });
 
   // sequelize.sync({force: true});
@@ -14,7 +24,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   Posts.create({
     title: req.body.title,
-    author: req.body.author,
+    author: req.loginAs,
     content: req.body.content
   }).then(() => {
       res.send('ok');

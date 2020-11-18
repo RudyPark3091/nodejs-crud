@@ -5,7 +5,18 @@
   const buttonWrapper = document.querySelector("#button-wrapper");
 
   post.onclick = (e) => {
-      location.href = '/save';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/save', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.send(JSON.stringify({ "request": "save" }));
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        location.href = '/save';
+      } else if (xhr.readyState === 4 && xhr.response === "unauthenticated") {
+        alert("You should sign in first");
+      }
+    }
   }
 
   if (login) {

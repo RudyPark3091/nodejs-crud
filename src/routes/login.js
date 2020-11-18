@@ -24,7 +24,8 @@ router.get('/', (req, res, next) => {
     }
   }).then(() => {
     res.render('login', {
-      'title': 'LOGIN'
+      'title': 'LOGIN',
+      'loginAs': req.cookies.loginAs
     });
   }).catch(err => {
     console.error(err);

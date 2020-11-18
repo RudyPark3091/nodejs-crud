@@ -20,7 +20,7 @@ router.use((req, res, next) => {
     req.loginAs = null;
   }
   next();
-})
+});
 
 router.get('/', (req, res, next) => {
   const posts = Posts.findAll().then(posts => {
@@ -49,7 +49,8 @@ router.get('/', (req, res, next) => {
   }).then(items => {
     res.render('index', {
       'title': 'BOARD',
-      'items': items
+      'items': items,
+      'loginAs': req.cookies.userAlias
     });
   }).catch(err => {
     console.error(err);
