@@ -13,6 +13,15 @@ router.use('/', (req, res, next) => {
 });
 */
 
+router.use((req, res, next) => {
+  if (req.cookies.userAlias) {
+    req.loginAs = req.cookies.userAlias;
+  } else {
+    req.loginAs = null;
+  }
+  next();
+})
+
 router.get('/', (req, res, next) => {
   const posts = Posts.findAll().then(posts => {
     const ids = [];
@@ -33,7 +42,8 @@ router.get('/', (req, res, next) => {
       "titles": titles,
       "authors": authors,
       "contents": contents,
-      "createdAt": dates
+      "createdAt": dates,
+      "loginAs": req.cookies.userAlias
     };
     return next;
   }).then(items => {
@@ -44,6 +54,11 @@ router.get('/', (req, res, next) => {
   }).catch(err => {
     console.error(err);
   });
+});
+
+router.post('/logout', (req, res, next) => {
+  res.clearCookie('userAlias');
+  res.send('logout');
 });
 
 module.exports = router;

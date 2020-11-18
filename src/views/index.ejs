@@ -3,20 +3,14 @@
     <%- include ('layout/table.ejs') %>
     <div id="button-wrapper">
       <button id="post">POST</button>
-      <button id="login">LOGIN</button>
+      <% if (items.loginAs) { %>
+        <button id="logout">LOGOUT</button>
+      <% } else { %>
+        <button id="login">LOGIN</button>
+      <% } %>
     </div>
 
 </div>
-<script>
-    const post = document.querySelector('#post');
-    const login = document.querySelector('#login');
-    post.onclick = (e) => {
-        location.href = '/save';
-    }
-    login.onclick = (e) => {
-      location.href = '/login';
-    }
-    
-</script>
+<script src="js/index.js"></script>
 <script src="js/post.js"></script>
 <%- include('layout/footer.ejs') %>

@@ -39,7 +39,8 @@ router.post('/', (req, res, next) => {
     if (!user) {
       res.send("no user");
     } else {
-      res.cookie('userAlias', user.alias, { maxAge: 60 * 60 * 1 });
+      res.cookie('userAlias', user.alias, { maxAge: 1000 * 60 * 1 });
+      // login valid for 1 hour
       res.send('ok');
     }
   }).catch(err => {
